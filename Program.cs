@@ -38,12 +38,14 @@ namespace RockPaperScissors
         
         public static void PlayGame(int rounds)
         {
+
+            int userwins = 0;
+            int pcwins = 0;
+            int ties = 0;
+
             for (int i = 0; i < rounds; i++)
             {
                 int userchoice;
-                int userwins = 0;
-                int pcwins = 0;
-                int ties = 0;
 
                 Random random = new Random();
 
@@ -59,19 +61,19 @@ namespace RockPaperScissors
                     {
                         Console.WriteLine("This round is a tie");
                         //having problems adding this up
-                        ties += 1;
+                        ties++;
                     }
                     else if ((userchoice == 1 && pcchoice == 3) || (userchoice == 2 && pcchoice == 1) || (userchoice == 3 && pcchoice == 2))
                     {
                         Console.WriteLine("User wins this round");
                         //having problems adding this up
-                        userwins += 1;
+                        userwins++;
                     }
                     else
                     {
                         Console.WriteLine("PC wins this round");
                         //having problems adding this up
-                        pcwins += 1;
+                        pcwins++;
                     }
                 }
                 else
@@ -121,9 +123,7 @@ namespace RockPaperScissors
                         PlayAgain();
                     }
                 }
-
             }
-            
         }
 
         public static void PlayAgain()
@@ -131,7 +131,7 @@ namespace RockPaperScissors
             int selection;
             do
             {
-                Console.WriteLine("Play again?  If so, enter how many rounds you would like to play.");
+                Console.WriteLine("Play again?  Press 1 if you would like to play again.");
                 selection = Convert.ToInt32(Console.ReadLine());
                 if (selection == 1)
                 {
