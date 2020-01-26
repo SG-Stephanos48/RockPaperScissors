@@ -43,7 +43,7 @@ namespace RockPaperScissors
             int pcwins = 0;
             int ties = 0;
 
-            for (int i = 0; i < rounds; i++)
+            for (int i = 1; i <= rounds; i++)
             {
                 int userchoice;
 
@@ -82,7 +82,7 @@ namespace RockPaperScissors
 
                 }
 
-                if (userchoice == i)
+                if (rounds == i)
                 {
                     //Show user results and exit to PlayAgain to ask user to play again
                     if (userwins > pcwins)
