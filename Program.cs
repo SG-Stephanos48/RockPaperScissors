@@ -14,14 +14,13 @@ namespace RockPaperScissors
                 if (rounds <= 10 && rounds >= 1)
                 {
                     PlayGame(rounds);
-                    break;
                 }
                 else
                 {
                     Console.WriteLine("Please enter a number between 1 and 10");
                 }
             }
-            while (true);
+            while (PlayAgain() == true);
             /*
             Console.WriteLine("How many rounds would you like to pLay? ");
             rounds = Convert.ToInt32(Console.ReadLine());
@@ -95,8 +94,6 @@ namespace RockPaperScissors
                         Console.WriteLine("");
                         Console.WriteLine("Thanks for playing!!");
                         Console.WriteLine("");
-                        PlayAgain();
-
                     }
                     else if (pcwins > userwins)
                     {
@@ -108,7 +105,6 @@ namespace RockPaperScissors
                         Console.WriteLine("");
                         Console.WriteLine("Thanks for playing!!");
                         Console.WriteLine("");
-                        PlayAgain();
                     }
                     else
                     {
@@ -120,31 +116,31 @@ namespace RockPaperScissors
                         Console.WriteLine("");
                         Console.WriteLine("Thanks for playing!!");
                         Console.WriteLine("");
-                        PlayAgain();
                     }
                 }
             }
         }
 
-        public static void PlayAgain()
+        public static bool PlayAgain()
         {
             int selection;
-            do
+            bool doIt;
+                        
+            Console.WriteLine("Play again?  Press 1 if you would like to play again.");
+            selection = Convert.ToInt32(Console.ReadLine());
+            if (selection == 1)
             {
-                Console.WriteLine("Play again?  Press 1 if you would like to play again.");
-                selection = Convert.ToInt32(Console.ReadLine());
-                if (selection == 1)
-                {
-                    //how to call the main method?
-                    Main(null);
-                }
-                else
-                {
-                    Console.WriteLine("Please enter 1 to play again or 2 to exit");
-                    break;
-                }
+                // how to call the main method?
+                // Main(null);
+                doIt = true;
             }
-            while (true);
+            else
+            {
+                doIt = false;
+            }
+
+            return doIt;
+            
         }
     }
 }
